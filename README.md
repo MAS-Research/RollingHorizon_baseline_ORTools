@@ -1,6 +1,9 @@
 # Paratransit Rolling Horizon Heuristic Baseline
 
-This is mainly implemented by Mike Wilbur (wilburmike25@gmail.com) and edited by Youngseo Kim (yk796@cornell.edu). 
+This is the baseline offline heuristics used in the paper below.
+
+Offline Pickup and Delivery Problem with Time Windows via Rolling Horizon Trip-Vehicle Assignment, Y Kim, D Edirimanna, M Wilbur, P Pugliese, A Laszka, A Dubey, S Samaranayake, accepted in The 37th AAAI Conference on Artificial Intelligence
+
 
 ---
 ## Guideline 
@@ -48,3 +51,7 @@ rtree
 shapely
 geopandas
 jupyterlab
+
+___
+## Contributers
+This is mainly implemented by Mike Wilbur (wilburmike25@gmail.com) and edited by Youngseo Kim (yk796@cornell.edu). 
