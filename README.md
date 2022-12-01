@@ -32,12 +32,9 @@ create output csv file that is stored in data/processed_baseline_output director
 ---
 
 ## Data Folder Description
-1. data/map 
-  a. nodes.csv 
-  b. edges.csv
-  c. times.csv
-2. data/requests - 
-3. data/vehicles - 
+1. data/map - (a) nodes.csv with columns of 'node_id', 'lat', 'lon' (b) edges.csv with columns of 'source_node', 'target_node', 'edge_weight' (c) times.csv is travel time matrix
+2. data/requests - column names are 'origin node', 'origin lon', 'origin lat', 'destin node', 'destin lon', 'destin lat', 'time', 'date'
+3. data/vehicles - column names are 'vehicle id', 'node id', 'node lat', 'node lon', 'start time', 'capacity'
 
 To generate data for other regions, one can use [PrepforOpenRidepoolSimulator](https://github.com/youngseo-Kim/PrepforOpenRidepoolSimulator)
 
