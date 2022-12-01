@@ -1,5 +1,7 @@
 #directory containing large data
 data/baseline_output/*
+data/processed_baseline_output/*
+data/processed_routes_output/*
 data/data_Chattanooga/*
 data/NYC/*
 

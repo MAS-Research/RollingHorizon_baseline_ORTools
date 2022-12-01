@@ -67,13 +67,13 @@ def read_vehicles(file_path):
     return df
 
 
-def write_vehicle_runs(df, dirpath, date, data_type, suffix, num_vehicles, time_limit):
-    file_path = os.path.join(dirpath, f"{date.year}_{date.month}_{date.day}_{num_vehicles}_{data_type}_{suffix}_{time_limit}.csv")
+def write_vehicle_runs(df, dirpath, date, data_type, sample_per, num_vehicles, time_limit):
+    file_path = os.path.join(dirpath, f"{date.year}_{date.month}_{date.day}_{num_vehicles}_{data_type}_{sample_per}_{time_limit}.csv")
     df.to_csv(file_path, index=False)
 
 
-def vehicle_runs_exist(dirpath, date, data_type, suffix, num_vehicles, time_limit):
-    file_path = os.path.join(dirpath, f"{date.year}_{date.month}_{date.day}_{num_vehicles}_{data_type}_{suffix}_{time_limit}.csv")
+def vehicle_runs_exist(dirpath, date, data_type, sample_per, num_vehicles, time_limit):
+    file_path = os.path.join(dirpath, f"{date.year}_{date.month}_{date.day}_{num_vehicles}_{data_type}_{sample_per}_{time_limit}.csv")
     result = os.path.exists(file_path)
     return result
 
@@ -84,13 +84,14 @@ def read_vehicle_runs(dirpath):
         if filename.endswith(".csv"):
             filepath = os.path.join(dirpath, filename)
             temp = filename.split("_")
-            year, month, day, num_vehicles, perc, time_limit_temp = int(temp[0]), int(temp[1]), int(temp[2]), int(temp[3]), temp[4], temp[5]
+            year, month, day, num_vehicles, data_type, perc, time_limit_temp = int(temp[0]), int(temp[1]), int(temp[2]), int(temp[3]), temp[4], int(temp[5]), temp[6]
             time_limit = time_limit_temp.split(".")[0]
             date = dt.date(year, month, day)
             df_temp = pd.read_csv(filepath)
             df_temp['date'] = date
-            df_temp['perc'] = int(perc)
+            df_temp['data_type'] = data_type
             df_temp['num_vehicles'] = num_vehicles
+            df_temp['perc'] = perc
             df_temp['time_limit'] = int(time_limit)
             dfs.append(df_temp)
     df = pd.concat(dfs, ignore_index=True)
