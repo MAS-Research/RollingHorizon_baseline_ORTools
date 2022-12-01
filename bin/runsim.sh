@@ -1,12 +1,13 @@
 #!/bin/bash
 
-SUFFIX=100 # sampled percentage
+SAMPLE_PER=1 # sampled percentage
+DATA_TYPE="NYC" #or "Chattanooga"
 
-for i in 3 4 5 6
+for i in 3 4
 do
-	for t in 1 2 3 4 # 0.1, 0.2, 0.3, 0.4 second
+	for t in 1 2 # 0.1, 0.2, 0.3, 0.4 second
 	do
-		python app/run_sim.py --suffix $SUFFIX --num_vehicles $i --time_limit $t &
+		python app/run_sim.py --data_type $DATA_TYPE --sample_per $SAMPLE_PER --num_vehicles $i --time_limit $t &
 	done
 done
 wait

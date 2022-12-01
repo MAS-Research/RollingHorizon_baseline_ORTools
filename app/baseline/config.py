@@ -2,11 +2,11 @@ import os
 from ortools.constraint_solver import routing_enums_pb2
 
 
-# filepaths
-REQUESTS_DIR = os.path.join(os.getcwd(), "data", "data", "requests")
-MAP_DIR = os.path.join(os.getcwd(), "data", "data", "map")
-VEHICLES_DIR = os.path.join(os.getcwd(), "data", "data", "vehicles")
-BASELINE_OUTPUT_DIR = os.path.join(os.getcwd(), "data", "baseline_output")
+# # filepaths
+# REQUESTS_DIR = os.path.join(os.getcwd(), "data", "data", "requests")
+# MAP_DIR = os.path.join(os.getcwd(), "data", "data", "map")
+# VEHICLES_DIR = os.path.join(os.getcwd(), "data", "data", "vehicles")
+# BASELINE_OUTPUT_DIR = os.path.join(os.getcwd(), "data", "baseline_output")
 
 # sim settings
 VEHICLE_CAPACITY = 8

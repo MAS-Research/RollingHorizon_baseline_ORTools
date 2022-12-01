@@ -67,13 +67,13 @@ def read_vehicles(file_path):
     return df
 
 
-def write_vehicle_runs(df, dirpath, date, suffix, num_vehicles, time_limit):
-    file_path = os.path.join(dirpath, f"{date.year}_{date.month}_{date.day}_{num_vehicles}_{suffix}_{time_limit}.csv")
+def write_vehicle_runs(df, dirpath, date, data_type, suffix, num_vehicles, time_limit):
+    file_path = os.path.join(dirpath, f"{date.year}_{date.month}_{date.day}_{num_vehicles}_{data_type}_{suffix}_{time_limit}.csv")
     df.to_csv(file_path, index=False)
 
 
-def vehicle_runs_exist(dirpath, date, suffix, num_vehicles, time_limit):
-    file_path = os.path.join(dirpath, f"{date.year}_{date.month}_{date.day}_{num_vehicles}_{suffix}_{time_limit}.csv")
+def vehicle_runs_exist(dirpath, date, data_type, suffix, num_vehicles, time_limit):
+    file_path = os.path.join(dirpath, f"{date.year}_{date.month}_{date.day}_{num_vehicles}_{data_type}_{suffix}_{time_limit}.csv")
     result = os.path.exists(file_path)
     return result
 
